@@ -37,11 +37,34 @@ public class Date {
 
     @Override
     public String toString() {
-        return String.format("", year + "-" + month + "-" + day);
+        return String.format("%d-%02d-%02d", getYear(), getMonth(), getDay());
     }
 
     public void addDay(){
+        int [] days = new int[] {31,28,31,30,31,30,31,31,30,31,30,31};
+        int nextMonth;
+
+        //last day of the month
+        if (getDay() == days[getMonth()-1]){
+            setDay(1);
+            nextMonth = (getMonth()<12) ? getMonth()+1:1;
+            if (nextMonth == 1) setYear(getYear()+1);
+            setMonth(nextMonth);
+            }
+        else {
+            setDay(getDay()+1);
+        }
 
     }
 
+    public static void main(String[] args) {
+        Date date = new Date(2020, 8, 04);
+        System.out.println(date.toString());
+        Date date1 = new Date(2021, 12, 31);
+        date1.addDay();
+        System.out.println(date1.toString());
+
+    }
 }
+
+
