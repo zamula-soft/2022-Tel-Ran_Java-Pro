@@ -37,9 +37,9 @@ public class Color {
 
     public String getHSL(){
 
-        float r1 = getR()/255;
-        float g1 = getG()/255;
-        float b1 = getB()/255;
+        float r1 = (float) getR()/255;
+        float g1 = (float) getG()/255;
+        float b1 = (float) getB()/255;
 
         double minC = Math.min(r1, g1);
         minC = Math.min(minC, b1);
@@ -62,7 +62,7 @@ public class Color {
         }
 
 
-        int l = (int) ((minC + maxC) / 2) * 100;
+        int l = (int) ((minC + maxC) / 2 * 100);
         int s = (delta == 0) ? 0 : (int) (delta / (1 - Math.abs(2 * l - 1)));
 
 
