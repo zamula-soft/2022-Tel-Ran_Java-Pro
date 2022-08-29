@@ -29,5 +29,7 @@ public class testPizza {
 
         PizzaOrder order = new PizzaOrder(pizzas);
         assertEquals(54.00, order.calculateTotalPrice(), 0.001);
+        order.add(new Pizza("large", 10, 2, 3));
+        assertEquals(98., order.calculateTotalPrice(), 0.001);
     }
 }

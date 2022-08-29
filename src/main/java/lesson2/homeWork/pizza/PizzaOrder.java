@@ -1,9 +1,12 @@
 package lesson2.homeWork.pizza;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PizzaOrder {
-    private List<Pizza> pizzas;
+    private List<Pizza> pizzas = new ArrayList<>();
+
+
 
     public PizzaOrder(List<Pizza> pizzas) {
         this.pizzas = pizzas;
@@ -15,6 +18,10 @@ public class PizzaOrder {
 
     public void setPizzas(List<Pizza> pizzas) {
         this.pizzas = pizzas;
+    }
+
+    public void add(Pizza pizza){
+        pizzas.add(pizza);
     }
 
     public double calculateTotalPrice(){
