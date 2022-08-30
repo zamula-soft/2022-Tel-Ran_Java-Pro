@@ -8,4 +8,8 @@ public enum Cru {
     Cru(int quality) {
         this.quality = quality;
     }
+
+    public int getQuality() {
+        return quality;
+    }
 }

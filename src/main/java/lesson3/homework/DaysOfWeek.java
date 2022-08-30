@@ -7,11 +7,13 @@ public enum DaysOfWeek {
     }
 
     public boolean isWeekDay() {
-        return this != SATURDAY && this != SUNDAY;
+//        return this != SATURDAY && this != SUNDAY;
+        return ordinal()<5;
     };
 
     public boolean isWeekEnd() {
-        return this == SATURDAY || this == SUNDAY;
+//        return this == SATURDAY || this == SUNDAY;
+        return !isWeekDay();
     };
 
 
