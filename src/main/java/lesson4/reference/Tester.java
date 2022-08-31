@@ -26,12 +26,12 @@ public class Tester {
             System.out.println("less");
         }
 
-        if (a1 == a2) //эквивалентность ссылки не равны друг-другу
+        if (t == a2) //эквивалентность ссылки не равны друг-другу
             System.out.println("==");
         else
             System.out.println("!=");
 
-        if (a1.equals(a2))
+        if (a2.equals(a2))
             System.out.println("==");
     }
 }

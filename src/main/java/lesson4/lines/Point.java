@@ -15,4 +15,11 @@ public class Point {
     public double getY() {
         return y;
     }
+
+
+    public double getLength (Point p){
+        return Math.sqrt(
+                Math.pow((p.getX() - getX()),2) + Math.pow((p.getY() - getY()),2)
+        );
+    }
 }
