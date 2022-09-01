@@ -51,9 +51,17 @@ public class PolyLine implements Figure {
 
     @Override
     public String toString() {
-        return "PolyLine{" +
-                "points=" + points +
-                '}';
+//        return "PolyLine{" +
+//                "points=" + points +
+//                '}';
+        StringBuilder b = new StringBuilder();
+        b.append("Polyline {");
+        for (int i = 0; i < points.size(); i++) {
+            b.append("\t");
+            b.append(points.get(i));
+        }
+        b.append("}");
+        return b.toString();
     }
 }
 

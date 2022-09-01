@@ -22,4 +22,12 @@ public class Point {
                 Math.pow((p.getX() - getX()),2) + Math.pow((p.getY() - getY()),2)
         );
     }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

@@ -12,5 +12,6 @@ public class LineTester {
                 .appendPoint(new Point(0, 0))
                 .appendPoint(new Point(1, 0))
         ;
+        System.out.println(p);
     }
 }
