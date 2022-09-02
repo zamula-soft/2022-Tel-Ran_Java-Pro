@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class ZipInfoTester {
     public static void main(String[] args) throws IOException {
-
+//Zip code information
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.zippopotam.us/")
                 .addConverterFactory(GsonConverterFactory.create())
