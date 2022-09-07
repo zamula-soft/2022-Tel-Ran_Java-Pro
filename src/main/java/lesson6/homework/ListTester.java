@@ -30,11 +30,14 @@ public class ListTester {
 
     public static boolean compareLists(List<Integer> a, List<Integer> b)
     {
-        for (int i = 0; i < a.size(); i++) {
+        /*for (int i = 0; i < a.size(); i++) {
             if (a.get(i) != b.get(i))
                 return false;
         }
-        return true;
+        return true;*/
+
+        return a.equals(b);
+
     }
 
     public static List<String> compareListsNewList(List<Integer> a, List<Integer> b)
@@ -95,4 +98,26 @@ public class ListTester {
             }
         }
     }
+
+    public static String [] removeDuplicateLesson(String[] s)
+    {
+        Arrays.sort(s);
+        List<String> r = new ArrayList<>();
+        String current = s[0];
+        r.add(current);
+        for (int i = 0; i < s.length; i++) {
+            if (!current.equals((s[i])))
+            {
+                current = s[i];
+                r.add(current);
+            }
+        }
+        String [] result = new String[r.size()];
+        for (int i = 0; i < result.length; i++) {
+            result[i] = r.get(i);
+        }
+//        return result;
+        return r.toArray(r.toArray(new String[]{}));
+    }
+
 }
