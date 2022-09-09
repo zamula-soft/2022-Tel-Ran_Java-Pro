@@ -99,7 +99,7 @@ public class MyCustomArrayList implements AdvancedArrayList {
 
             @Override
             public void remove() {
-               delete(size());
+               delete(position);
             }
         };
 

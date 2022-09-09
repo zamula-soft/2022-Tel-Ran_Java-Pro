@@ -9,6 +9,7 @@ public interface MyList extends Iterable<Integer>{
     int get (int index);
     void remove (int index);
     int size();
+    void set(int index, int value);
 
     Iterator<Integer> iterator();
 }

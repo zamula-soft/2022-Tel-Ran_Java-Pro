@@ -63,6 +63,11 @@ public class MyListSimpleImplementation implements MyList, Iterable<Integer>
     }
 
     @Override
+    public void set(int index, int value) {
+
+    }
+
+    @Override
     public Iterator<Integer> iterator() {
         return new Iterator<Integer>() { //анонимный внутренний класс
             private int position = 0;
