@@ -51,6 +51,28 @@ public class MyLinkedList implements MyList {
 
     }
 
+    public void addFirst(int value)
+    {
+        Node n = head;
+        Node nw = new Node(value);
+        nw.next = head;
+        this.head = nw;
+    }
+
+    public void removeFirst()
+    {
+        Node n = head;
+        n = n.getNext();
+        head.setNext(null);
+        head = n;
+
+    }
+
+    public int getFirst()
+    {
+        return head.getValue();
+    }
+
     @Override
     public void add(int index, int value) {
         Node n = head;
@@ -106,7 +128,16 @@ public class MyLinkedList implements MyList {
 
     @Override
     public void remove(int index) {
-
+        Node n = head;
+        while (n!=null)
+        {
+            if (index==1){
+                n.setNext(n.getNext().getNext());
+                n.getNext().setNext(null);
+            }
+            index--;
+            n = n.getNext();
+        }
     }
 
     @Override
@@ -141,7 +172,20 @@ public class MyLinkedList implements MyList {
 
     @Override
     public Iterator<Integer> iterator() {
-        return null;
+        return new Iterator<Integer>() {
+            private Node n = head;
+
+            @Override
+            public boolean hasNext() {
+                return (n.getNext() != null);
+            }
+
+            @Override
+            public Integer next() {
+                n = n.getNext();
+                return n.getValue();
+            }
+        };
     }
 
     static class Node //
