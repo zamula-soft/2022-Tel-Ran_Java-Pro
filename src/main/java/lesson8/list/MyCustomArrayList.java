@@ -45,7 +45,8 @@ public class MyCustomArrayList implements MyList {
             private int position = 0;
 
             @Override
-            public boolean hasNext() {
+            public boolean hasNext()
+            {
                 return position < size();
             }
 
