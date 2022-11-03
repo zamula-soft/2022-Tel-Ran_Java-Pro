@@ -1,6 +1,6 @@
-# Java Professional in IT School of TEL-RAN
-
-Contains Java classes and packages with different algorithms:
+# Java Professional in IT School of TEL-RAN #
+##Contents
+Java classes, packages, objects with different algorithms:
 - Simple Classes, Encapsulation (lesson 1)
 - Bank Account, Arrays, Lists (lesson 2)
 - Inheritance, Abstract class, Polymorphism, Recursive, Book, Pizza, PizzaOrder (lesson 2)
@@ -11,6 +11,13 @@ Contains Java classes and packages with different algorithms:
 - Iterators and Iterable, For each, List (lesson 7)
 - List, Linked Lists, Double LinkedList (lesson 8)
 - Java Set implementation (lesson 9) 
+- Architecture Sample "Command" - SAM (single action method) interface, 
+  Anonymous Inside Class, Lambda expressions, Set, HashSet (the most effective), 
+  LinkedSet, TreeSet, Comparable, Using sets in class (lesson 10)  
+- Map (lesson 11)
+- (lesson 12)
+- (lesson 13)
+- (lesson 14)
 
 ## Additional info
 
