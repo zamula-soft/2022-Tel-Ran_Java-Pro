@@ -14,7 +14,7 @@ Java classes, packages, objects with different algorithms:
 - Architecture Sample "Command" - SAM (single action method) interface, 
   Anonymous Inside Class, Lambda expressions, Set, HashSet (the most effective), 
   LinkedSet, TreeSet, Comparable, Using sets in class (lesson 10)  
-- Map (lesson 11)
+- Map, Data structure - Queue, Stack. Exceptions, try - catch blocks, Custom ArrayDeque implementation (lesson 11)
 - (lesson 12)
 - (lesson 13)
 - (lesson 14)

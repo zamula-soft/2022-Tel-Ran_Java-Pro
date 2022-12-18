@@ -21,7 +21,7 @@ public class DuplicateSearch {
     public static Collection<String> getDuplicates(String s)
     {
         s = s.toLowerCase();
-        s = s.replaceAll(".", "");
+        s = s.replaceAll("\\.", ""); //regular expr
         s = s.replaceAll(",", "");
         String [] tokens = s.split(" ");
 
@@ -36,7 +36,6 @@ public class DuplicateSearch {
                 words.add(w);
 
         }
-
         return duplicates;
     }
 
