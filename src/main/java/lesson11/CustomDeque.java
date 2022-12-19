@@ -12,4 +12,6 @@ public interface CustomDeque {
 
     int size();
 
+    String toString();
+
 }

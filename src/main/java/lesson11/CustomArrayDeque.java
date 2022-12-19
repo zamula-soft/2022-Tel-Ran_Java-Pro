@@ -1,5 +1,7 @@
 package lesson11;
 
+import java.util.Arrays;
+
 public class CustomArrayDeque implements CustomDeque{
 
     private int [] source;//contains
@@ -7,21 +9,21 @@ public class CustomArrayDeque implements CustomDeque{
     private int firstElementIndex = 0; // to quickly delete and add element in the beginning
 
     private static final int CAPACITY = 4;
-    CustomArrayDeque(){
+    public CustomArrayDeque(){
         source = new int[CAPACITY];
     }
 
     @Override
     public void addFirst(int i) {
-        if (size == source.length){
+        if (size == source.length)
             increaseCapacity(); //new array with 2*length and copy all elements
-            firstElementIndex = (firstElementIndex - 1 + source.length) % source.length;
+
+            firstElementIndex = (firstElementIndex + source.length) % source.length;
             //the previous is equal to
             //     if (firstElementIndex == 0)  firstElementIndex = source.length - 1;
             //     else  firstElementIndex = firstElementIndex - 1;
             source[firstElementIndex] = i;
             size++;
-        }
     }
 
     private void increaseCapacity() {
@@ -63,21 +65,43 @@ public class CustomArrayDeque implements CustomDeque{
 
     @Override
     public void addLast(int i) {
+        if (size == source.length)
+            increaseCapacity(); //new array with 2*length and copy all elements
 
+            int nextLastIndex = (firstElementIndex + size + 1) % source.length;
+            source[nextLastIndex] = i;
+            size++;
     }
 
     @Override
     public int getLast() {
-        return 0;
+        if (size == 0)
+            throw new IndexOutOfBoundsException();
+        int lastIndex = (firstElementIndex + size) % source.length;
+        return source[lastIndex];
     }
 
     @Override
     public int removeLast() {
-        return 0;
+        if (size == 0)
+            throw new IndexOutOfBoundsException();
+        int lastIndex = (firstElementIndex + size) % source.length;
+        int lastElement = source[lastIndex];
+        size--;
+        return lastElement;
     }
 
     @Override
     public int size() {
         return size;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomArrayDeque{" +
+                "source=" + Arrays.toString(source) +
+                ", size=" + size +
+                ", firstElementIndex=" + firstElementIndex +
+                '}';
     }
 }
