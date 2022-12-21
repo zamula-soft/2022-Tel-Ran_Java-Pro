@@ -33,6 +33,17 @@ public class TestStack {
         Queue<Integer> ints = new LinkedList<>(Arrays.asList(10,20,30,40,50,60,70,80,90,100));
 //        ints.addAll(Arrays.asList(10,20,30,40,50,60,70,80,90,100));
         System.out.println(partialReverse(ints, 3));
+
+
+        CustomArrayDeque customArrayDeque = new CustomArrayDeque();
+        customArrayDeque.addFirst(10);
+        customArrayDeque.addFirst(5);
+        customArrayDeque.addLast(20);
+        customArrayDeque.addLast(30);
+        customArrayDeque.addLast(40);
+
+        System.out.println(customArrayDeque);
+
     }
 
     public static Collection<String> reverse (Collection<String> strings){

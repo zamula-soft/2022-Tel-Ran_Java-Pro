@@ -40,6 +40,7 @@ public class TestCustomArrayDeque {
         customArrayDeque.addFirst(10);
         customArrayDeque.addLast(20);
         assertEquals(customArrayDeque.size(), 2);
+        assertEquals("[10, 20]", customArrayDeque.toString());
     }
 
     @Test
@@ -61,6 +62,20 @@ public class TestCustomArrayDeque {
         int lastValue = customArrayDeque.removeLast();
         assertEquals(customArrayDeque.size(), 1);
         assertEquals(lastValue, 20);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testThrowExceptionGettingFirstElementFromEmptyDeque()
+    {
+        CustomArrayDeque customArrayDeque = new CustomArrayDeque();
+        customArrayDeque.getFirst();
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testThrowExceptionGettingLastElementFromEmptyDeque()
+    {
+        CustomArrayDeque customArrayDeque = new CustomArrayDeque();
+        customArrayDeque.getLast();
     }
 
 

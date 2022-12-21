@@ -2,14 +2,15 @@ package lesson11;
 
 import java.util.Arrays;
 
-public class CustomArrayDeque implements CustomDeque{
+public class CustomArrayDeque implements CustomDeque {
 
-    private int [] source;//contains
+    private int[] source;//contains
     private int size = 0;  //size of container
     private int firstElementIndex = 0; // to quickly delete and add element in the beginning
 
     private static final int CAPACITY = 4;
-    public CustomArrayDeque(){
+
+    public CustomArrayDeque() {
         source = new int[CAPACITY];
     }
 
@@ -18,16 +19,16 @@ public class CustomArrayDeque implements CustomDeque{
         if (size == source.length)
             increaseCapacity(); //new array with 2*length and copy all elements
 
-            firstElementIndex = (firstElementIndex + source.length) % source.length;
-            //the previous is equal to
-            //     if (firstElementIndex == 0)  firstElementIndex = source.length - 1;
-            //     else  firstElementIndex = firstElementIndex - 1;
-            source[firstElementIndex] = i;
-            size++;
+        firstElementIndex = (firstElementIndex + source.length - 1) % source.length;
+        //the previous is equal to
+        //     if (firstElementIndex == 0)  firstElementIndex = source.length - 1;
+        //     else  firstElementIndex = firstElementIndex - 1;
+        source[firstElementIndex] = i;
+        size++;
     }
 
     private void increaseCapacity() {
-        int [] newSource = new int[source.length * 2];
+        int[] newSource = new int[source.length * 2];
 
         int j = 0; // index in new array
         //all elements from first index till the end of array
@@ -68,16 +69,16 @@ public class CustomArrayDeque implements CustomDeque{
         if (size == source.length)
             increaseCapacity(); //new array with 2*length and copy all elements
 
-            int nextLastIndex = (firstElementIndex + size + 1) % source.length;
-            source[nextLastIndex] = i;
-            size++;
+        int nextLastIndex = (firstElementIndex + size) % source.length;
+        source[nextLastIndex] = i;
+        size++;
     }
 
     @Override
     public int getLast() {
         if (size == 0)
             throw new IndexOutOfBoundsException();
-        int lastIndex = (firstElementIndex + size) % source.length;
+        int lastIndex = (firstElementIndex + size - 1) % source.length;
         return source[lastIndex];
     }
 
@@ -85,7 +86,7 @@ public class CustomArrayDeque implements CustomDeque{
     public int removeLast() {
         if (size == 0)
             throw new IndexOutOfBoundsException();
-        int lastIndex = (firstElementIndex + size) % source.length;
+        int lastIndex = (firstElementIndex + size - 1) % source.length;
         int lastElement = source[lastIndex];
         size--;
         return lastElement;
@@ -98,10 +99,20 @@ public class CustomArrayDeque implements CustomDeque{
 
     @Override
     public String toString() {
-        return "CustomArrayDeque{" +
-                "source=" + Arrays.toString(source) +
-                ", size=" + size +
-                ", firstElementIndex=" + firstElementIndex +
-                '}';
+
+        StringBuilder builder = new StringBuilder();
+        builder.append("[");
+
+        for (int i = 0; i < size; i++) {
+
+            builder.append(source[(firstElementIndex + i) % source.length]);
+            if (i < size - 1)
+                builder.append(", ");
+
+        }
+
+        builder.append("]");
+        return builder.toString();
+//        return Arrays.toString(source);
     }
 }

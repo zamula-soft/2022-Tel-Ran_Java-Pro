@@ -15,7 +15,7 @@ Java classes, packages, objects with different algorithms:
   Anonymous Inside Class, Lambda expressions, Set, HashSet (the most effective), 
   LinkedSet, TreeSet, Comparable, Using sets in class (lesson 10)  
 - Map, Data structure - Queue, Stack. Exceptions, try - catch blocks, Custom ArrayDeque implementation (lesson 11)
-- (lesson 12)
+- Task to solve with deque and stack, Reverse Polish Notation, Exceptions (lesson 12)
 - (lesson 13)
 - (lesson 14)
 
