@@ -20,5 +20,16 @@ public class EmployeeTester {
         System.out.println(employees);
         employees.sort(Comparator.comparing(Employee::getAge).thenComparing(Employee::getName));
         System.out.println(employees);
+
+        complexSort(employees, Arrays.asList(new Employee.EmployeeAgeComparator(), new Employee.EmployeeNameComparator()));
+    }
+
+    //list comparator
+    public static void complexSort(List<Employee> employees, List<Comparator<Employee>> comparators){
+        Comparator<Employee> comparator = comparators.get(0);
+        for (int i = 1; i < comparators.size(); i++) {
+            comparator.thenComparing(comparators.get(i));
+        }
+        employees.sort(comparator);
     }
 }

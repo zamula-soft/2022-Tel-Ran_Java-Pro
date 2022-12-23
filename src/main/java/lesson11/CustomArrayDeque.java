@@ -1,6 +1,8 @@
 package lesson11;
 
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class CustomArrayDeque implements CustomDeque {
 
@@ -115,4 +117,90 @@ public class CustomArrayDeque implements CustomDeque {
         return builder.toString();
 //        return Arrays.toString(source);
     }
+
+    public Iterator<Integer> getBackwardsIterator()
+    {
+        return new Iterator<Integer>() {
+            private int position = size;
+            @Override
+            public boolean hasNext() {
+                return --position >=0;
+            }
+
+            @Override
+            public Integer next() {
+                if (position < 0 || position >=size)
+                    throw new NoSuchElementException();
+
+                return source[(firstElementIndex + position) % source.length];
+            }
+        };
+
+    }
+
+    public class BackwardIterator implements Iterator<Integer>
+    {
+
+       private int [] data = new int[size];
+       private int position = size;
+
+       public BackwardIterator()
+       {
+           for (int i = 0; i < size; i++) {
+               data[i] = source[(firstElementIndex + i) % source.length];
+           }
+           position = size;
+           Arrays.sort(data);
+       }
+
+        @Override
+        public boolean hasNext() {
+            return --position >=0; //
+        }
+
+        @Override
+        public Integer next() {
+            if (position < 0 || position >=size)
+                throw new NoSuchElementException();
+
+            return data[position];
+        }
+    }
+
+
+    //second variant
+    public BackwardIteratorPrivate getPrivateIterator()
+    {
+        return new BackwardIteratorPrivate();
+    }
+
+    private class BackwardIteratorPrivate implements Iterator<Integer>
+    {
+
+        private int [] data = new int[size];
+        private int position = size;
+
+        public void BackwardIterator()
+        {
+            for (int i = 0; i < size; i++) {
+                data[i] = source[(firstElementIndex + i) % source.length];
+            }
+            position = size;
+            Arrays.sort(data);
+        }
+
+        @Override
+        public boolean hasNext() {
+            return --position >=0; //
+        }
+
+        @Override
+        public Integer next() {
+            if (position < 0 || position >=size)
+                throw new NoSuchElementException();
+
+            return data[position];
+        }
+    }
+
 }

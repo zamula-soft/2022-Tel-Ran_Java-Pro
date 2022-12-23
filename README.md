@@ -14,10 +14,10 @@ Java classes, packages, objects with different algorithms:
 - Architecture Sample "Command" - SAM (single action method) interface, 
   Anonymous Inside Class, Lambda expressions, Set, HashSet (the most effective), 
   LinkedSet, TreeSet, Comparable, Using sets in class (lesson 10)  
-- Map, Data structure - Queue, Stack. Exceptions, try - catch blocks, Custom ArrayDeque implementation (lesson 11)
+- Map, Data structure - Queue, Stack. Exceptions, try - catch blocks, Custom ArrayDeque implementation, Iterator in custom deque (lesson 11)
 - Task to solve with deque and stack, Reverse Polish Notation, Exceptions, Test exception (@Rule) (lesson 12)
-- Comparing objects in Java. Comparator? Comparable/ Method sort (lesson 13)
-- (lesson 14)
+- Comparing objects in Java. Comparator, Comparable, sort list and collections (lesson 13)
+- Sorted collections of elements (lesson 14)
 - (lesson 15)
 
 ## Additional info
