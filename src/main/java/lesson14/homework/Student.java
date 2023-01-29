@@ -6,11 +6,11 @@ public class Student {
         Linux, Java, FrontEnd, Algorithms
     }
 
-    String name;
-    int age;
-    Subjects subjects;
+    private String name;
+    private int age;
+    private String subjects;
 
-    public Student(String name, int age, Subjects subjects) {
+    public Student(String name, int age, String subjects) {
         this.name = name;
         this.age = age;
         this.subjects = subjects;
@@ -24,7 +24,7 @@ public class Student {
         return age;
     }
 
-    public Subjects getSubjects() {
+    public String getSubjects() {
         return subjects;
     }
 
@@ -36,7 +36,7 @@ public class Student {
         this.age = age;
     }
 
-    public void setSubjects(Subjects subjects) {
+    public void setSubjects(String subjects) {
         this.subjects = subjects;
     }
 }
