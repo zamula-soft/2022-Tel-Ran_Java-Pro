@@ -3,7 +3,7 @@ package lesson15.hashmap;
 public class MyHasMap implements MyMap{
 
     private int size; // quantity pairs
-    private static final int INITIAL_CAPACITY = 16;
+    private static final int INITIAL_CAPACITY = 4;
     private static final double LOAD_FACTOR = 0.75;
     //koef of capacity - size/source.length >=LOAD_FACTOR - need to be rebalanced, to void long chains
     private Pair[] source = new Pair[INITIAL_CAPACITY]; //buckets
@@ -17,6 +17,12 @@ public class MyHasMap implements MyMap{
             this.value = value;
             this.next = next;
         }
+
+        @Override
+        public String toString() {
+            return "{"+key+": "+value+"}";
+        }
+
     }
     @Override
     public void put(String key, String value) {
@@ -31,6 +37,10 @@ public class MyHasMap implements MyMap{
             source[bucket] = pair;
             size++;
         }
+    }
+
+    public int capacity(){
+        return source.length;
     }
 
     private int findBucket(String key){
@@ -54,16 +64,35 @@ public class MyHasMap implements MyMap{
     private void resize(){
         //new array times 2 source
         //all the elements in the source and put them into new array
-        // INITIAL_CAPACITY = INITIAL_CAPACITY * 2;
-        Pair newSource [] = new Pair [INITIAL_CAPACITY * 2];
-        for (int i = 0; i < source.length; i++) {
+        Pair newSource [] = new Pair [source.length * 2];
+
             for (Pair p:source) {
-                int bucket = Math.abs(p.key.hashCode()) % source.length;
-                p.next = newSource[bucket];
-                newSource[bucket] = p;
-            }
+                Pair c = p;
+                while (c!=null){
+                    Pair n = c.next;
+                    int bucket = Math.abs(c.key.hashCode()) % newSource.length;
+                    c.next = newSource[bucket];
+                    newSource[bucket] = c;
+                    c = n;
+                }
         }
         source = newSource;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder b = new StringBuilder("[");
+        int s = size-1;
+        for (Pair p:source) {
+            Pair c = p;
+            while (c!= null){
+                b.append(c);
+                if (--s>=0) b.append(", ");
+                c = c.next;
+            }
+        }
+        b.append("]");
+            return b.toString();
     }
 
     @Override
@@ -76,12 +105,31 @@ public class MyHasMap implements MyMap{
 
     @Override
     public String remove(String key) {
+        int bucket = findBucket(key);
+        Pair c = source[bucket];
+        if (c == null)
+            return null;
+        if (c.key.equals(key)){
+            source[bucket] = c.next;
+            size--;
+            return c.value;
+        }
+        while (c.next != null){
+            if (c.next.key.equals(key)){
+                String res = c.next.value;
+                c.next = c.next.next;
+                return res;
+            }
+            c = c.next;
+
+        }
+
         return null;
     }
 
     @Override
     public boolean contains(String key) {
-        return (findPair(key) != null);
+        return findPair(key) != null;
     }
 
     @Override
