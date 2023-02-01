@@ -30,7 +30,7 @@ Lesson 21. Java Streams: Collectors and Custom Collectors.
 
 Lesson 22. Introduction to Input and Output in Java.
 
-Lesson 23. Reading/Writing streams of bytes.
+23. Lesson 23. Reading/Writing streams of bytes. API exchange currency (Rate.java)
 
 Lesson 24. Reading/Writing streams of strings.
 
@@ -51,12 +51,12 @@ Lesson 32. Thread, Runnable, Daemon threads, Interrupted Exception.
 
 Lesson 33. Synchronization. Mutex, Monitor. Atomic types.
 
-Lesson 34. Object.wait, Object.join. One-element blocking queue (Messenger).
-
+34. (17.11) Lesson 34. Object.wait, Object.join. One-element blocking queue (Messenger). 
+    (Request.java - using Rate - 23 lesson)
+    
 35. (15.11)Lesson 35. JavaUtilConcurrent. Concurrent Collections. ConcurrentHashMap, Hashtable, 
     Collections.synchronizedMap(new HashMap<>()), Vector, Collections.synchronizedSet()
     CompletableFeature
-
 Lesson 36. Threads Executors.
 Lesson 37. Apache Maven, сборка проектов
 
