@@ -40,7 +40,7 @@ Lesson 26. Class String and its methods. Immutable. StringBuilder, StringBuffer,
 
 Lesson 27. Working with Arrays in Java. Binary search. Sort.
 
-Lesson 28. Generics, Object.equals, Exceptions.
+28. Lesson 28. Generics (Car-Truck), ? extends Consumer, ? super Producer. Object.equals, Exceptions.
 
 Lesson 29. Unit testing. JUnit.
 
@@ -53,7 +53,9 @@ Lesson 33. Synchronization. Mutex, Monitor. Atomic types.
 
 Lesson 34. Object.wait, Object.join. One-element blocking queue (Messenger).
 
-Lesson 35. JavaUtilConcurrent. Concurrent Collections.
+35. (15.11)Lesson 35. JavaUtilConcurrent. Concurrent Collections. ConcurrentHashMap, Hashtable, 
+    Collections.synchronizedMap(new HashMap<>()), Vector, Collections.synchronizedSet()
+    CompletableFeature
 
 Lesson 36. Threads Executors.
 Lesson 37. Apache Maven, сборка проектов
@@ -62,7 +64,7 @@ Lesson 38. Принципы программирования: DRY, YAGNI, KISS, 
 
 Lesson 39. Reflections. Annotations.
 
-Lesson 40. Spring Framework: Introduction, Context and Beans
+#Lesson 40. Spring Framework: Introduction, Context and Beans
 
 Lesson 41. Spring Framework: Beans configuration
 
