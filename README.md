@@ -73,10 +73,8 @@ Lesson 42. Spring Boot: Onion (Hexagonal) architecture
 Lesson 43. Spring Boot: Implementing Rest Controllers
 
 44. (17.11) Lesson 44. Java JDBC API, работа с базами данных, (SQLIte, embedded database - local storage, JDBC)
-
-Lesson 45. Spring Boot: JPA and databases
-
-Lesson 46. Spring Boot: validation
+46. (24.11) Lesson 46. Spring Boot: validation, User (autoincrement), transactions, 
+47. (24.11) SPRING
 
 Lesson 47. Spring Boot: logging and AOP basics
 
